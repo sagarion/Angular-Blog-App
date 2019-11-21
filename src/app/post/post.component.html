@@ -1,0 +1,29 @@
+
+<li [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts > 0,
+                'list-group-item-danger': loveIts < 0 }">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div style="font-size: x-large"><b>{{title}}</b></div>
+      </div>
+        <div class="col-sm-6">
+          <div><i> {{ createdAt |date: 'dd/MM/yyyy, hh:mm aa' | uppercase }}</i></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"><p>{{content}}</p></div>
+    </div>
+    <div class="row">
+      <div class="col col-lg-1">
+      <button class="btn btn-success"
+              (click)="likeIt()">Love it !</button>
+      </div>
+      <div class="col col-lg-1">
+      <button class="btn btn-danger"
+              (click)="dontlikeIt()">Don't love it !</button>
+      </div>
+    </div>
+  </div>
+</li>
